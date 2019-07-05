@@ -1,0 +1,34 @@
+using System;
+namespace ConsoleApplication1
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+        int Number = Convert.ToInt32(Console.ReadLine());
+        string erg = "";
+        
+        for (int x = 2; x < Number; x++)
+        {
+            bool p = isPrime(x);
+            if (p == true)
+            {
+                erg += x;
+                erg += " ";
+            }
+        }
+    Console.WriteLine(erg);
+    }
+
+    public static bool isPrime(int number)
+    {
+        int start = 2;
+        double limit = Math.Sqrt(number);
+        while (start <= limit)
+        {
+            if (number % start++ < 1) return false;
+        }
+    return number > 1;
+    }
+  }
+}
